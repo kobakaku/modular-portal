@@ -12,9 +12,11 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.18",
+    "@rainbow-me/rainbowkit": "^1.3.0",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "wagmi": "^1.4.7"
   },
   "devDependencies": {
     "@types/node": "^20",
