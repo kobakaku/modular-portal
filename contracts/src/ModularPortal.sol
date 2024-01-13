@@ -4,7 +4,7 @@ pragma solidity ^0.8.17;
 
 import "lib/forge-std/src/console.sol";
 
-contract GmPortal {
+contract ModularPortal {
     uint256 totalGms;
     event NewGm(address indexed from, uint256 timestamp, string message);
     struct Gm {
