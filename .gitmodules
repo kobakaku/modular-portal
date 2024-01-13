@@ -1,0 +1,3 @@
+[submodule "optimism-celestia"]
+	path = optimism-celestia
+	url = https://github.com/kobakaku/optimism-celestia
