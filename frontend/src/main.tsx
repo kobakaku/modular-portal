@@ -22,17 +22,18 @@ import theme from "./theme";
 
 const ethermintChain: Chain = {
   id: 1582,
-  name: "Bubs testnet",
-  network: "bubs",
+  name: "Modular Portal",
+  network: "mod",
   nativeCurrency: {
     decimals: 18,
-    name: "Bubs",
-    symbol: "gETH",
+    name: "Mod",
+    symbol: "MOD",
   },
   rpcUrls: {
     default: {
-      http: ["https://bubs.calderachain.xyz/http"],
-      webSocket: ["wss://bubs.calderachain.xyz/ws"],
+      // http: ["https://bubs.calderachain.xyz/http"],
+      // webSocket: ["wss://bubs.calderachain.xyz/ws"],
+      http: ["http://localhost:8545"],
     },
   },
   testnet: true,

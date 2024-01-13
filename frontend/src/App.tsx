@@ -1,7 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useState, useEffect, SetStateAction } from "react";
 import { ethers } from "ethers";
-import GmPortal from "../GmPortal.json";
+import ModularPortal from "../ModularPortal.json";
 import { useAccount } from "wagmi";
 import moment from "moment";
 import {
@@ -11,14 +11,12 @@ import {
   Button,
   HStack,
   Text,
-  Link,
   Card,
   CardBody,
   CardHeader,
   CardFooter,
   Input,
 } from "@chakra-ui/react";
-import { TopButtons } from "./Components/TopButtons";
 import "./App.css";
 
 /* Please put your contractAddrss */
@@ -47,7 +45,7 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum as any);
     const contract = new ethers.Contract(
       contractAddress,
-      GmPortal.abi,
+      ModularPortal.abi,
       provider
     );
     let data = await contract.getAllGms();
@@ -65,7 +63,7 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum as any);
     const contract = new ethers.Contract(
       contractAddress,
-      GmPortal.abi,
+      ModularPortal.abi,
       provider
     );
     const totalGms = await contract.getTotalGms();
@@ -82,7 +80,7 @@ function App() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
         contractAddress,
-        GmPortal.abi,
+        ModularPortal.abi,
         signer
       );
       const tx = await contract.gm(message);
@@ -105,7 +103,6 @@ function App() {
   return (
     <div>
       <Flex direction="column" minHeight="100vh">
-        <TopButtons />
         <Flex
           justifyContent="center"
           alignItems="center"
@@ -114,28 +111,15 @@ function App() {
         >
           <VStack p="8" maxWidth="800px">
             <Heading size="2xl" mb="5">
-              gm portal 🧋
+              Modular Portal 🧋
             </Heading>
             {!address ? (
               <div>
                 <Heading size="md" pb="3">
-                  A smart contract demo on Bubs testnet
+                  ModularPortal
                 </Heading>
                 <Text pb="3">
-                  gm portal is a simple smart contract that allows you to send a
-                  message to the blockchain. It's a demo of how to interact with
-                  a smart contract on 🧋 Bubs testnet.
-                </Text>
-                <Text pb="3">
-                  Visit the 🚰 faucet at{" "}
-                  <Link
-                    color="purple.500"
-                    href="https://bubstestnet.com"
-                    target="_blank"
-                  >
-                    bubstestnet.com
-                  </Link>{" "}
-                  to interact with the gm portal.
+                  Modular Portal is a simple smart contract platform.
                 </Text>
               </div>
             ) : null}
@@ -222,25 +206,6 @@ function App() {
             <br />
           </VStack>
         </Flex>
-        <Text textAlign="center" fontStyle="italic" pb="3">
-          This site and smart contract are
-          <Link
-            color="purple.500"
-            href="https://github.com/jcstein/gm-portal"
-            target="_blank"
-          >
-            open source
-          </Link>
-          and the
-          <Link
-            color="purple.500"
-            href="https://plausible.io/gmportal.xyz"
-            target="_blank"
-          >
-            analytics
-          </Link>
-          are GDPR compliant
-        </Text>
       </Flex>
     </div>
   );
